@@ -5,7 +5,7 @@ It supports **user & driver registration, authentication, ride requesting, accep
 
 ---
 
-## 🚀 Tech Stack
+## Tech Stack
 
 - Java 17+
 - Spring Boot
@@ -21,14 +21,14 @@ It supports **user & driver registration, authentication, ride requesting, accep
 ```text
 src/main/java/
  └── com.example.project
-      ├── config        → Security & JWT filter
-      ├── controller    → REST APIs
-      ├── dto           → Request/Response DTOs
-      ├── exception     → Custom exceptions & global handler
-      ├── model         → MongoDB entities
-      ├── repository   → MongoDB repositories
-      ├── service      → Business logic
-      └── util         → JWT utility
+      ├── config        
+      ├── controller    
+      ├── dto           
+      ├── exception     
+      ├── model         
+      ├── repository   
+      ├── service      
+      └── util        
 
 src/main/resources/
  └── application.yaml   → App configuration (uses placeholders, no secrets)
@@ -55,14 +55,9 @@ jwt:
   secret: "${JWT_SECRET}"
   expiration: 86400000
 ```
-
-MONGODB_URI → your real MongoDB Atlas connection string <br>
-JWT_SECRET → your own long random secret key for signing JWTs
-
 ---
 
 ## 🔐 Authentication Flow
-
 1. User or Driver registers using the register API.
 2. User or Driver logs in using the login API.
 3. A JWT token is returned on successful login.
@@ -97,7 +92,7 @@ Authorization: Bearer <JWT_TOKEN>
   "password": "1234"
 }
 ```
-## 🚕 Ride APIs  
+## Ride APIs  
 *(All ride APIs require JWT authentication)*
 
 #### 1. Request a Ride (USER)  
@@ -123,7 +118,6 @@ Authorization: Bearer <JWT_TOKEN>
 
 ---
 ## ▶️ How to Run the Project
-
 1. Clone the repository  
 2. Add MongoDB connection string and JWT secret  
 3. Run the application.
@@ -131,7 +125,6 @@ Authorization: Bearer <JWT_TOKEN>
 ---
 
 ## ✅ Features Implemented
-
 - User & Driver Registration  
 - JWT-based Authentication  
 - Role-based Authorization  
